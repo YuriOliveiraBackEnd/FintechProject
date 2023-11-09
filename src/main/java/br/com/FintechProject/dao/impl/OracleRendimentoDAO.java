@@ -11,8 +11,10 @@ import java.util.List;
 
 import br.com.FintechProject.singleton.ConexaoBanco;
 import br.com.FintechProject.bean.ModelRendimento;
+import br.com.FintechProject.dao.RendimentoDAO;
+import br.com.FintechProject.exception.DBException;
 
-public class OracleRendimentoDAO {
+public class OracleRendimentoDAO implements RendimentoDAO {
 	private Connection conexao;
 	
 	public void cadastrar(ModelRendimento rendimento) {
@@ -97,6 +99,24 @@ public class OracleRendimentoDAO {
 		    }
 		    return lista;
 		  }
+
+	@Override
+	public void atualizar(ModelRendimento rendimento) throws DBException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remover(int id) throws DBException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ModelRendimento buscar(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
 	

@@ -22,7 +22,7 @@ private Connection conexao;
 	
 	
 
-
+@Override
 	public void cadastrar(ModelGasto gasto) {
 		PreparedStatement ps = null;
 		
@@ -75,6 +75,7 @@ private Connection conexao;
 		
 	
 	}
+	@Override
 	public List<ModelGasto> listarTodos(){
 		//cria uma lista de gastos
 	    List<ModelGasto> lista = new ArrayList<ModelGasto>();
@@ -117,14 +118,76 @@ private Connection conexao;
 	  }
 	@Override
 	public void atualizar(ModelGasto gasto) throws DBException {
-		// TODO Auto-generated method stub
+	
+			PreparedStatement ps = null;
+
+			try {
+				conexao = ConexaoBanco.getInstance().abrirConexao();
+				String sql = "UPDATE GASTO SET nr_parcelas = ?, dt_gasto = ?, valor = ?, descricao = ? , tx_titulo = ?, tipo = ?, id_cartao = ?, id_usuario = ? WHERE id_gasto = ?";
+				
+				 ps = conexao.prepareStatement(sql);
+				
+				ps.setInt(1, gasto.getNr_parcelas());
+				
+				Date data = Date.valueOf(gasto.getDt_gasto());
+				ps.setDate(2, data);
+				
+				ps.setDouble(3, gasto.getValor());
+				
+				ps.setString(4, gasto.getDescricao());
+				
+				ps.setString(5, gasto.getTx_titulo());
+				
+				ps.setString(6, gasto.getTipo());
+				
+				ps.setInt(7, gasto.getId_cartao());
+				
+				ps.setInt(8, gasto.getId_usuario());
+			
+				ps.setInt(9, gasto.getId_gasto());
+
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new DBException("Erro ao atualizar.");
+			} finally {
+				try {
+					ps.close();
+					conexao.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
 		
-	}
+	
 	@Override
 	public void remover(int id) throws DBException {
-		// TODO Auto-generated method stub
 		
-	}
+				PreparedStatement ps = null;
+
+				try {
+					conexao = ConexaoBanco.getInstance().abrirConexao();
+					String sql = "DELETE FROM GASTO WHERE ID_GASTO = ?";
+					ps = conexao.prepareStatement(sql);
+					ps.setInt(1, id);
+					ps.executeUpdate();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					throw new DBException("Erro ao remover.");
+				} finally {
+					try {
+						ps.close();
+						conexao.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				
+			}
+		
+	
 	@Override
 	public ModelGasto buscar(int id) {
 		// TODO Auto-generated method stub

@@ -11,8 +11,10 @@ import java.util.List;
 
 import br.com.FintechProject.singleton.ConexaoBanco;
 import br.com.FintechProject.bean.ModelInvestimento;
+import br.com.FintechProject.dao.InvestimentoDAO;
+import br.com.FintechProject.exception.DBException;
 
-public class OracleInvestimentoDAO {
+public class OracleInvestimentoDAO implements InvestimentoDAO {
 	private Connection conexao;
 	
 	public void cadastrar(ModelInvestimento investimento) {
@@ -94,6 +96,24 @@ public class OracleInvestimentoDAO {
 		    }
 		    return lista;
 		  }
+
+	@Override
+	public void atualizar(ModelInvestimento investimento) throws DBException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remover(int id) throws DBException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ModelInvestimento buscar(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
 	
