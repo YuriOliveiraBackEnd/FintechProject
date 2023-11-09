@@ -5,7 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
- <link rel="stylesheet" href="resources/css/header.css">
+  <link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
+ <link rel="stylesheet" href="resources/css/header1.css">
+ <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- menu/menu responsivo -->
@@ -22,9 +24,9 @@
 
                 <ul id="menu">
                     <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Serviços Contratados</a></li>
-                    <li class="nav-item"><a href=href="#" class="nav-link">Buscar Serviços</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Gastos e Rendimentos</a></li>
+                    <li class="nav-item"><a href=href="#" class="nav-link">Cartôes</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Investimentos</a></li>
 
                     <div class="login-button " id="login-mobile">
                         <button><a href="Login.html">Login</a>
@@ -54,6 +56,8 @@
 
         </nav>
     </header>
-     <link rel="stylesheet" href="resources/js/darkmode.js">
+       <script src="https://kit.fontawesome.com/f68320f3ea.js" crossorigin="anonymous"></script>
+       <script src="resources/js/darkmode.js"></script>
 </body>
+
 </html>
