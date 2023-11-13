@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
-  <display-name>exemploServelet</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <servlet>
-    <description></description>
-    <display-name>PrimeiraServlet</display-name>
-    <servlet-name>PrimeiraServlet</servlet-name>
-    <servlet-class>exemploServelet.PrimeiraServlet</servlet-class>
+    <servlet-name>GastoServlet</servlet-name>
+    <servlet-class>br.com.FintechProject.Controller</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>PrimeiraServlet</servlet-name>
-    <url-pattern>/PrimeiraServlet</url-pattern>
+    <servlet-name>GastoServlet</servlet-name>
+    <url-pattern>/GastoServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletProdutoShow</display-name>
-    <servlet-name>ServletProdutoShow</servlet-name>
-    <servlet-class>exemploServelet.ServletProdutoShow</servlet-class>
+    <display-name>CadastroUsuario</display-name>
+    <servlet-name>CadastroUsuario</servlet-name>
+    <servlet-class>br.com.FintechProject.Controller.CadastroUsuario</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletProdutoShow</servlet-name>
-    <url-pattern>/ServletProdutoShow</url-pattern>
+    <servlet-name>CadastroUsuario</servlet-name>
+    <url-pattern>/CadastroUsuario</url-pattern>
   </servlet-mapping>
 </web-app>

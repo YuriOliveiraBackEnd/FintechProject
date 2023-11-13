@@ -1,17 +1,37 @@
 package br.com.FintechProject.bean;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ModelUsuario {
 	private int id_usuario;
 	private String nome;
 	private String nr_cpf;
-	private Date dt_nasc;
+	private LocalDate dt_nasc;
 	private String tel_usuario;
 	private String email_usuario;
 	private String senha_usuario;
 	private String url_foto;
 	
+	
+	public ModelUsuario(int id_usuario, String nome, String nr_cpf, LocalDate dt_nasc, String tel_usuario,
+			String email_usuario, String senha_usuario, String url_foto) {
+		super();
+		this.id_usuario = id_usuario;
+		this.nome = nome;
+		this.nr_cpf = nr_cpf;
+		this.dt_nasc = dt_nasc;
+		this.tel_usuario = tel_usuario;
+		this.email_usuario = email_usuario;
+		this.senha_usuario = senha_usuario;
+		this.url_foto = url_foto;
+	}
+
+	public ModelUsuario(String nome, String nr_cpf, String tel_usuario, String email_usuario, String senha_usuario,
+			LocalDate dt_nasc, String url_foto) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId_usuario() {
 		return id_usuario;
 	}
@@ -30,10 +50,10 @@ public class ModelUsuario {
 	public void setNr_cpf(String nr_cpf) {
 		this.nr_cpf = nr_cpf;
 	}
-	public Date getDt_nasc() {
+	public LocalDate getDt_nasc() {
 		return dt_nasc;
 	}
-	public void setDt_nasc(Date dt_nasc) {
+	public void setDt_nasc(LocalDate dt_nasc) {
 		this.dt_nasc = dt_nasc;
 	}
 	public String getTel_usuario() {

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class ModelGasto extends ModelMovimentacaoFinanceira {
 	private int id_gasto;
-	private int nr_parcelas;
+	private int nr_parcelas; 
 	private LocalDate dt_gasto;
 	private int id_cartao;
 	private int id_usuario;

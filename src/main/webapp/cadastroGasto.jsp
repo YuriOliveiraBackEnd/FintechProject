@@ -16,8 +16,8 @@
    
     <h2 class="Title">Cadastro de gastos</h2>
 
-    <label for="data">Título:</label>
-    <input type="text" id="tirulo" name="categoria" required>
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required>
 
     <label for="descricao">Descrição:</label>
     <input type="text" id="descricao" name="descricao">
@@ -36,10 +36,10 @@
     
     <label for="metodoPagamento">Método de Pagamento:</label>
     <select id="metodoPagamento" name="metodoPagamento" required>
-      <option value="dinheiro">Dinheiro</option>
+      <option value="cartao">Cartão</option>
     </select>
 
-    <label for="descricao">Número do cartão:</label>
+    <label for="Nr_cartao">Número do cartão:</label>
     <input type="text" id="descricao" name="descricao">
     <button type="submit">Cadastrar</button>
   </form>
