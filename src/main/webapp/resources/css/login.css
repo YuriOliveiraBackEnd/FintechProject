@@ -1,0 +1,117 @@
+.main-login{
+  width: 96vw;
+  height: 700px;
+  background-color:white ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 170px;
+  transition: background 0.2s linear;
+}
+.left-login{
+  width: 46vw;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.dark .main-login{
+  width: 96vw;
+  height: 700px;
+  background-color:#111 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 170px;
+  transition: background 0.2s linear;
+}
+.left-login>h1{
+  font-size:2vw ;
+  color: #FFD11D;
+}
+.right-login{
+  width: 46vw;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-login{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+.card-login>h1{
+  color: #FFD11D;
+  font-weight: 800;
+  margin: 0;
+}
+.textfield{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0;
+}
+.left-login-img{
+  width: 30vw;
+}
+.textfield>input{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0 15px 40px;
+  background-color: rgb(231, 213, 213) ;
+  box-shadow: 0px 10px 40px #00000056;
+  font-size: 12pt;
+  outline: none;
+  color: black;
+  box-sizing: border-box;
+}
+
+.textfield > label{
+  color: black;
+  margin-bottom: 10px;
+}
+.textfield > input ::placeholder{
+  color: #f0ffff94;
+ 
+}
+
+.btn-login{
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius:8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: white;
+  background-color: #FFD11D;
+  cursor: pointer;
+}
+.btn-login:hover{
+  background-color: #FFD11D;
+}
+input[type='checkbox']{
+  width: 15px;
+  height: 15px;
+  accent-color: #FFD11D;
+}
+
+.textfield i{
+  position: absolute;
+  padding: 10px 10px;
+  margin-top: 30px;
+}

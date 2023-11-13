@@ -168,6 +168,7 @@ ul {
     position: absolute;
 }
 
+
 .label-mood-dark {
     background-color: #111;
     border-radius: 50px;
@@ -183,7 +184,16 @@ ul {
     margin-top: 17px;
     transform: scale(1.5);
 }
-
+.dark .main-login{
+  width: 96vw;
+  height: 700px;
+  background-color:#232c35 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 170px;
+  transition: background 0.2s linear;
+}
 .label-mood-dark .ball {
     background-color: #fff;
     border-radius: 50%;

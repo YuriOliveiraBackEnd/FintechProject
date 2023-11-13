@@ -1,0 +1,53 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+          
+        }
+
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            width: 357px;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            gap: 10px;
+             width: 400px;
+            margin-bottom: 22%;
+            margin-top: 21%;
+            margin-left: 39%;
+            
+        }
+
+        .success-icon {
+            color: #4caf50;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+
+        .back-to-home {
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            width: 80%;
+        }
+
+        .back-to-home:hover {
+            background-color: #45a049;
+        }

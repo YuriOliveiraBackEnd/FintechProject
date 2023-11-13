@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
   <link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
- <link rel="stylesheet" href="resources/css/header1.css">
+ <link rel="stylesheet" href="resources/css/header2.css">
  <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
 </head>
 <body>
