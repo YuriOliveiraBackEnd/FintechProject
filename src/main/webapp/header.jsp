@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+  
 <!DOCTYPE html>
+  
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
   <link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
  <link rel="stylesheet" href="resources/css/header2.css">
  <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
@@ -23,15 +25,24 @@
             <div class="nav-list" id="nav">
 
                 <ul id="menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Gastos e Rendimentos</a></li>
-                    <li class="nav-item"><a href=href="#" class="nav-link">Cartôes</a></li>
+                    <li class="nav-item"><a href=href="#" class="nav-link">Cartões</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Investimentos</a></li>
 
+
+                     <c:if test= "${empty user }">
                     <div class="login-button " id="login-mobile">
-                        <button><a href="Login.html">Login</a>
+                        <button><a href="login.jsp">Login</a>
                         </button>
                     </div>
+                    </c:if>
+                         <c:if test= "${not empty user }">
+                    <div class="login-button " id="login-mobile">
+                        <button  ><a href="login">Logout</a>
+                        </button>
+                    </div>
+                    </c:if>
 
                 </ul>
             </div>
@@ -47,10 +58,18 @@
                         <div class="ball"></div>
                     </label>
                 </div>
-                <div class="login-button" id="login">
-                    <button><a href="Login.html">Login</a>
-                    </button>
-                </div>
+                   <c:if test= "${empty user }">
+                    <div class="login-button " id="login">
+                        <button><a href="login.jsp">Login</a>
+                        </button>
+                    </div>
+                    </c:if>
+                         <c:if test= "${not empty user }">
+                    <div class="login-button " id="login">
+                        <button><a href="login">Logout</a>
+                        </button>
+                    </div>
+                    </c:if>
             </div>
 
 

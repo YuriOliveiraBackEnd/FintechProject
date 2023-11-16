@@ -12,4 +12,6 @@ public interface UsuarioDAO {
 	void remover(int id) throws DBException;
 	ModelUsuario buscar(int id);
 	List<ModelUsuario> listarTodos();
+	boolean validarUsuario(ModelUsuario usuario);
+	String buscarnome(String email_usuario);
 }

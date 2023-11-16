@@ -11,8 +11,8 @@
 <%@ include file="header.jsp" %>
    <div class="error-container">
         <div class="error-icon">&#9888;</div>
-        <div class="error-message">Ops! Algo deu errado no cadastro de gastos.</div>
-        <button onclick="window.location.href='index.jsp'" class="back-to-home">Voltar à página inicial</button>
+        <div class="error-message">Ops! Usuário e/ou senha  incorretas.</div>
+        <button onclick="window.location.href='login.jsp'" class="back-to-home">Voltar à Tela de login</button>
     </div>
 <%@ include file="footer.jsp" %>
 </body>

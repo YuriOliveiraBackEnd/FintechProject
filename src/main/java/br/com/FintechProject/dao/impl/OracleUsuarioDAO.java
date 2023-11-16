@@ -3,6 +3,7 @@ package br.com.FintechProject.dao.impl;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,7 +21,7 @@ private Connection conexao;
 	try {
 		conexao = ConexaoBanco.getInstance().abrirConexao();
 		
-		String sql = "INSERT INTO USSUARIO(id_usuario,nome,nr_cpf,dt_nasc,tel_usuario,email_usuario,senha_usuario,url_foto)" + "VALUES(SQ_Rendimento.nextval, ?, ?, ?,?,?,?,?,?)";
+		String sql = "INSERT INTO USUARIO(id_usuario,nm_usuario,nr_cpf,dt_nasc,tel_usuario,email_usuario,senha_usuario)" + "VALUES(SQ_USUARIO.nextval, ?, ?, ?,?,?,?)";
 		
 		ps = conexao.prepareStatement(sql);
 		
@@ -38,7 +39,7 @@ private Connection conexao;
 		
 		ps.setString(6, usuario.getSenha_usuario());
 		
-		ps.setString(7, usuario.getUrl_foto());
+		
 		
 		
 		ps.executeUpdate();
@@ -81,4 +82,68 @@ private Connection conexao;
 		// TODO Auto-generated method stub
 		return null;
 	}
-}
+
+	@Override
+	public boolean validarUsuario(ModelUsuario usuario) {
+		
+				PreparedStatement ps = null;
+				ResultSet rs = null;
+				try {
+					conexao = ConexaoBanco.getInstance().abrirConexao();
+			
+					ps = conexao.prepareStatement("SELECT * FROM USUARIO WHERE EMAIL_USUARIO = ? AND SENHA_USUARIO = ?");
+					ps.setString(1, usuario.getEmail_usuario());
+					ps.setString(2, usuario.getSenha_usuario());
+					rs = ps.executeQuery();
+
+					if (rs.next()){
+						return true;
+					}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}finally {
+					try {
+						ps.close();
+						rs.close();
+						conexao.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				return false;
+				
+	}
+
+	@Override
+	public String buscarnome(String email_usuario) {
+		   
+		    String nome = null;
+			ModelUsuario usuario = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			try {
+				conexao = ConexaoBanco.getInstance().abrirConexao();
+				ps = conexao.prepareStatement("SELECT NM_USUARIO FROM USUARIO WHERE EMAIL_USUARIO = ?");
+				ps.setString(1, email_usuario);
+				rs = ps.executeQuery();
+
+				if (rs.next()){
+					nome = rs.getString("NM_USUARIO");
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					ps.close();
+					rs.close();
+					conexao.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return nome;
+		}
+	}
+

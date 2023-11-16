@@ -2,7 +2,7 @@ package br.com.FintechProject.bean;
 
 import java.time.LocalDate;
 import java.util.Date;
-
+import br.com.FintechProject.util.CriptografiaUtils;
 public class ModelUsuario {
 	private int id_usuario;
 	private String nome;
@@ -14,23 +14,29 @@ public class ModelUsuario {
 	private String url_foto;
 	
 	
-	public ModelUsuario(int id_usuario, String nome, String nr_cpf, LocalDate dt_nasc, String tel_usuario,
-			String email_usuario, String senha_usuario, String url_foto) {
+	public ModelUsuario( String nome, String nr_cpf, String tel_usuario ,String email_usuario,
+			 String senha_usuario, LocalDate dt_nasc) {
 		super();
-		this.id_usuario = id_usuario;
 		this.nome = nome;
 		this.nr_cpf = nr_cpf;
 		this.dt_nasc = dt_nasc;
 		this.tel_usuario = tel_usuario;
 		this.email_usuario = email_usuario;
 		this.senha_usuario = senha_usuario;
-		this.url_foto = url_foto;
 	}
+	public ModelUsuario( String email_usuario,
+			 String senha_usuario) {
+		super();
+		this.email_usuario = email_usuario;
+		this.senha_usuario = senha_usuario;
+	}
+	public ModelUsuario( String nome) {
+		super();
+		this.nome = nome;
+		
+	}
+	
 
-	public ModelUsuario(String nome, String nr_cpf, String tel_usuario, String email_usuario, String senha_usuario,
-			LocalDate dt_nasc, String url_foto) {
-		// TODO Auto-generated constructor stub
-	}
 
 	public int getId_usuario() {
 		return id_usuario;
@@ -72,7 +78,11 @@ public class ModelUsuario {
 		return senha_usuario;
 	}
 	public void setSenha_usuario(String senha_usuario) {
-		this.senha_usuario = senha_usuario;
+		try {
+		this.senha_usuario = CriptografiaUtils.criptografar(senha_usuario);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	public String getUrl_foto() {
 		return url_foto;

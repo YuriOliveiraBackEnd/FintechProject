@@ -12,7 +12,7 @@
 <%@ include file="header.jsp" %>
  <br>
     <!-- titulo-->
-   <H4 class="name">Olá,Maria</H4>
+   <H4 class="name">Olá,<%= request.getAttribute("nomeUsuario") %></H4>
 
 
     <!-- buttons radios -->
@@ -20,7 +20,7 @@
    <main class="cards-planos">
    
     <div class="cardplanos">
-    <div class="card-saldo">   <span><i class="fa-solid fa-envelope " "></i> @yurixxx37@gmail </span></i></div>
+    <div class="card-saldo">   <span><i class="fa-solid fa-envelope " "></i> ${user}  </span></i></div>
     <div class="conteudo">
         <h3 class="titulo">Saldo em conta</h3>
         <h4 class="preco">R$ 3,50</h4>

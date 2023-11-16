@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -39,8 +41,11 @@ public class UsuarioServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -55,9 +60,9 @@ public class UsuarioServlet extends HttpServlet {
           String data = request.getParameter("data");
           DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
           LocalDate dt_nasc = LocalDate.parse(data, formatter);
-          String url_foto = null;
           
-          ModelUsuario usuario = new ModelUsuario(nome,nr_cpf,tel_usuario,email_usuario,senha_usuario,dt_nasc,url_foto);
+          
+          ModelUsuario usuario = new ModelUsuario(nome,nr_cpf,tel_usuario,email_usuario,senha_usuario,dt_nasc);
           
           dao.cadastrar(usuario);
           
@@ -70,6 +75,7 @@ public class UsuarioServlet extends HttpServlet {
 			  response.sendRedirect("telaErroCadastro.jsp");
 			  
 		  }
+		  
 		
           
 	}
