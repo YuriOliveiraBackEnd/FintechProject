@@ -12,4 +12,5 @@ public interface RendimentoDAO {
 	void remover(int id) throws DBException;
 	ModelRendimento buscar(int id);
 	List<ModelRendimento> listarTodos();
+	Integer buscarId(String userEmail);
 }

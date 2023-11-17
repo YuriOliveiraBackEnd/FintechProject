@@ -38,4 +38,24 @@
     <servlet-name>CartaoServlet</servlet-name>
     <url-pattern>/CartaoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RendimentoServlet</display-name>
+    <servlet-name>RendimentoServlet</servlet-name>
+    <servlet-class>br.com.FintechProject.Controller.RendimentoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RendimentoServlet</servlet-name>
+    <url-pattern>/RendimentoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InvestimentoServlet</display-name>
+    <servlet-name>InvestimentoServlet</servlet-name>
+    <servlet-class>br.com.FintechProject.Controller.InvestimentoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InvestimentoServlet</servlet-name>
+    <url-pattern>/InvestimentoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

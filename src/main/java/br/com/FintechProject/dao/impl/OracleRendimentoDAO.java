@@ -11,6 +11,7 @@ import java.util.List;
 
 import br.com.FintechProject.singleton.ConexaoBanco;
 import br.com.FintechProject.bean.ModelRendimento;
+import br.com.FintechProject.bean.ModelUsuario;
 import br.com.FintechProject.dao.RendimentoDAO;
 import br.com.FintechProject.exception.DBException;
 
@@ -117,7 +118,38 @@ public class OracleRendimentoDAO implements RendimentoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+		@Override
+		public Integer buscarId(String userEmail) {
+	        int id_usuario = 0;
+			ModelUsuario usuario = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			try {
+				conexao = ConexaoBanco.getInstance().abrirConexao();
+				ps = conexao.prepareStatement("SELECT ID_USUARIO FROM USUARIO WHERE EMAIL_USUARIO = ?");
+				ps.setString(1, userEmail);
+				rs = ps.executeQuery();
+
+				if (rs.next()){
+					id_usuario = rs.getInt("ID_USUARIO");
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					ps.close();
+					rs.close();
+					conexao.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return id_usuario;
+		}
+	}
 	
-}
+
 	
 	

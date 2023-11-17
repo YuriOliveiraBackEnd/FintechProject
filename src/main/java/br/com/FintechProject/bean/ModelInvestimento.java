@@ -24,6 +24,16 @@ public class ModelInvestimento extends ModelMovimentacaoFinanceira {
 		this.setTx_titulo(tx_titulo);
 		this.setTipo(tipo);
 	}
+	public ModelInvestimento( LocalDate dt_investimento,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
+		super();
+		
+		this.dt_investimento = dt_investimento;
+		this.id_usuario = id_usuario;
+		this.setValor(valor);
+		this.setDescricao(descricao);
+		this.setTx_titulo(tx_titulo);
+		this.setTipo(tipo);
+	}
 	public int getId_investimento() {
 		return id_investimento;
 	}

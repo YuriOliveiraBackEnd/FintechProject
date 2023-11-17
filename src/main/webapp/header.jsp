@@ -28,7 +28,8 @@
                     <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="cadastroGasto.jsp" class="nav-link">Gastos e Rendimentos</a></li>
                     <li class="nav-item"><a href="cadastroCartao.jsp" class="nav-link">Cartões</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Investimentos</a></li>
+                     <li class="nav-item"><a href="cadastroRendimento.jsp" class="nav-link">Rendimentos</a></li>
+                    <li class="nav-item"><a href="cadastroInvestimento.jsp" class="nav-link">Investimentos</a></li>
 
 
                      <c:if test= "${empty user }">

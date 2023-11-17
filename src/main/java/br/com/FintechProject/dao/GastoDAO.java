@@ -12,6 +12,6 @@ public interface GastoDAO {
 	void remover(int id) throws DBException;
 	ModelGasto buscar(int id);
 	List<ModelGasto> listarTodos();
-	Integer buscarId(String user_email);
+	Integer buscarId(String userEmail);
 	Integer buscarCartao(String nr_cartao);
 }

@@ -23,6 +23,18 @@ public class ModelRendimento extends ModelMovimentacaoFinanceira{
 		this.setTx_titulo(tx_titulo);
 		this.setTipo(tipo);
 		this.id_usuario = id_usuario;
+		this.dt_rendimento = dt_rendimento;
+	}
+	public ModelRendimento(LocalDate dt_rendimento,  double rendimento_anual,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
+		super();
+
+		this.rendimento_anual = rendimento_anual;
+		this.setValor(valor);
+		this.setDescricao(descricao);
+		this.setTx_titulo(tx_titulo);
+		this.setTipo(tipo);
+		this.id_usuario = id_usuario;
+		this.dt_rendimento = dt_rendimento;
 	}
 
 	public int getId_rendimento() {

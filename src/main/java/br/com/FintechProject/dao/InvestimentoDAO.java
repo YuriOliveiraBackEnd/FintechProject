@@ -12,4 +12,5 @@ public interface InvestimentoDAO {
 	void remover(int id) throws DBException;
 	ModelInvestimento buscar(int id);
 	List<ModelInvestimento> listarTodos();
+	Integer buscarId(String userEmail);
 }
