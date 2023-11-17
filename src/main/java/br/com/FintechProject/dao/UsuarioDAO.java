@@ -14,4 +14,5 @@ public interface UsuarioDAO {
 	List<ModelUsuario> listarTodos();
 	boolean validarUsuario(ModelUsuario usuario);
 	String buscarnome(String email_usuario);
+	
 }

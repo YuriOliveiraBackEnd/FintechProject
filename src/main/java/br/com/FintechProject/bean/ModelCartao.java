@@ -34,7 +34,18 @@ public ModelCartao(int id_cartao,String nr_cartao, String dt_validade, String nm
 	this.nm_banco = nm_banco;
 	this.id_usuario = id_usuario;
 }
-
+public ModelCartao(String nr_cartao, String dt_validade, String nm_pessoa, String cv_cartao, String nm_bandeira,
+		String nm_banco, int id_usuario) {
+	super();
+	
+	this.nr_cartao = nr_cartao;
+	this.dt_validade = dt_validade;
+	this.nm_pessoa = nm_pessoa;
+	this.cv_cartao = cv_cartao;
+	this.nm_bandeira = nm_bandeira;
+	this.nm_banco = nm_banco;
+	this.id_usuario = id_usuario;
+}
 public int getId_cartao() {
 	return id_cartao;
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Cadasto Page</title>
  <link rel="stylesheet" href="resources/css/cadastroGasto.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <body>
   <div>
 
-  <form>
+  <form action="cadastrogasto" method = "post">
    
     <h2 class="Title">Cadastro de gastos</h2>
 
@@ -30,6 +30,9 @@
     <label for="valor">Valor:</label>
     <input type="text" id="valor" name="valor" required>
 
+ <label for="nr_parcelas">Quantidade de parcelas:</label>
+    <input type="number" id="nr_parcelas" name="nr_parcelas" required>
+
     
     <label for="data">Data:</label>
     <input type="date" id="data" name="data" required>
@@ -39,8 +42,8 @@
       <option value="cartao">Cartão</option>
     </select>
 
-    <label for="Nr_cartao">Número do cartão:</label>
-    <input type="text" id="descricao" name="descricao">
+    <label for="nr_cartao">Número do cartão:</label>
+    <input type="text" id="nr_cartao" name="nr_cartao">
     <button type="submit">Cadastrar</button>
   </form>
 </div>

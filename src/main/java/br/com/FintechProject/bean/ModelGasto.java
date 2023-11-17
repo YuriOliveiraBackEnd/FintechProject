@@ -7,8 +7,8 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 	private int id_gasto;
 	private int nr_parcelas; 
 	private LocalDate dt_gasto;
-	private int id_cartao;
 	private int id_usuario;
+	private int id_cartao;
 	
 	
 
@@ -17,7 +17,19 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 	}
 
 
-	public ModelGasto(int id_gasto, int nr_parcelas, LocalDate dt_gasto,double valor,String descricao,String tx_titulo,String tipo, int id_cartao, int id_usuario) {
+	public ModelGasto( int nr_parcelas, LocalDate dt_gasto,double valor,String descricao,String tx_titulo,String tipo, int id_usuario,int id_cartao) {
+		super();
+
+		this.nr_parcelas = nr_parcelas;
+		this.dt_gasto = dt_gasto;
+		this.setValor(valor);
+		this.setDescricao(descricao);
+		this.setTx_titulo(tx_titulo);
+		this.setTipo(tipo);
+		this.id_usuario = id_usuario;
+		this.id_cartao = id_cartao;
+	}
+	public ModelGasto(int id_gasto, int nr_parcelas, LocalDate dt_gasto,double valor,String descricao,String tx_titulo,String tipo, int id_usuario, int id_cartao) {
 		super();
 		this.id_gasto = id_gasto;
 		this.nr_parcelas = nr_parcelas;
@@ -26,8 +38,17 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 		this.setDescricao(descricao);
 		this.setTx_titulo(tx_titulo);
 		this.setTipo(tipo);
-		this.id_cartao = id_cartao;
 		this.id_usuario = id_usuario;
+		this.id_cartao = id_cartao;
+	}
+
+	public int getId_cartao() {
+		return id_cartao;
+	}
+
+
+	public void setId_cartao(int id_cartao) {
+		this.id_cartao = id_cartao;
 	}
 
 
@@ -47,13 +68,7 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 		this.nr_parcelas = nr_parcelas;
 	}
 	
-	public int getId_cartao() {
-		return id_cartao;
-	}
-	
-	public void setId_cartao(int id_cartao) {
-		this.id_cartao = id_cartao;
-	}
+
 	
 	public int getId_usuario() {
 		return id_usuario;

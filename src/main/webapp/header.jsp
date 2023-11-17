@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Header Page</title>
 
   <link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
  <link rel="stylesheet" href="resources/css/header2.css">
@@ -26,8 +26,8 @@
 
                 <ul id="menu">
                     <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Gastos e Rendimentos</a></li>
-                    <li class="nav-item"><a href=href="#" class="nav-link">Cartões</a></li>
+                    <li class="nav-item"><a href="cadastroGasto.jsp" class="nav-link">Gastos e Rendimentos</a></li>
+                    <li class="nav-item"><a href="cadastroCartao.jsp" class="nav-link">Cartões</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Investimentos</a></li>
 
 

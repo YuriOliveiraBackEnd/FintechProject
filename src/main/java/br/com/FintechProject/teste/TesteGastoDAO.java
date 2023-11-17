@@ -20,7 +20,6 @@ public class TesteGastoDAO {
 		gasto.setDescricao("ingresso show Racionais meia entrada ");
 		gasto.setTx_titulo("show Racionais ");
 		gasto.setTipo("Laser");
-		gasto.setId_cartao(2);
 		gasto.setId_usuario(3);
 		
 		dao.cadastrar(gasto);

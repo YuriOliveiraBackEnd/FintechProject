@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Erro Page</title>
 <link rel="stylesheet" href="resources/css/telaErro.css">
 </head>
 <body>

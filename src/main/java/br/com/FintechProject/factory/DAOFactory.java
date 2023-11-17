@@ -1,7 +1,9 @@
 package br.com.FintechProject.factory;
 
+import br.com.FintechProject.dao.CartaoDAO;
 import br.com.FintechProject.dao.GastoDAO;
 import br.com.FintechProject.dao.UsuarioDAO;
+import br.com.FintechProject.dao.impl.OracleCartaoDAO;
 import br.com.FintechProject.dao.impl.OracleGastoDAO;
 import br.com.FintechProject.dao.impl.OracleUsuarioDAO;
 
@@ -14,5 +16,8 @@ public class DAOFactory {
   {
 	  return new OracleUsuarioDAO();
   }
-
+  public static CartaoDAO getCartaoDAO()
+  {
+	  return new OracleCartaoDAO();
+  }
 }

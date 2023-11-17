@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-   <link rel="stylesheet" href="resources/css/login2.css">
+<title>Login Page</title>
+   <link rel="stylesheet" href="resources/css/login3.css">
     <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,10 +31,7 @@
                     <i class="fa-solid fa-lock " style="color: #FFD11D;"></i>
                 </div>
                 <div class="textfield">
-                    <div class="checkbox">
-                        <input type="checkbox" id="lembre-me">
-                        <label for="lembreMeCheckbox" id="checkboxList">Lembre-me</label>
-                    </div>
+                  <a href="cadastroUsuario.jsp" id="Cadastrarse">Cadastrar-se</a>
                 </div>
                 <button  type="submit" class="btn-login">Login</button>
             

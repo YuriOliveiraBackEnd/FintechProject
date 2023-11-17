@@ -13,6 +13,7 @@ import java.util.List;
 
 import br.com.FintechProject.singleton.ConexaoBanco;
 import br.com.FintechProject.bean.ModelGasto;
+import br.com.FintechProject.bean.ModelUsuario;
 import br.com.FintechProject.dao.GastoDAO;
 import br.com.FintechProject.exception.DBException;
 
@@ -193,5 +194,66 @@ private Connection conexao;
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public Integer buscarId(String userEmail) {
+        int id_usuario = 0;
+		ModelUsuario usuario = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conexao = ConexaoBanco.getInstance().abrirConexao();
+			ps = conexao.prepareStatement("SELECT ID_USUARIO FROM USUARIO WHERE EMAIL_USUARIO = ?");
+			ps.setString(1, userEmail);
+			rs = ps.executeQuery();
+
+			if (rs.next()){
+				id_usuario = rs.getInt("ID_USUARIO");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return id_usuario;
+	}
+
+
+	@Override
+	public Integer buscarCartao(String nr_cartao) {
+		    int id_cartao = 0;
+			ModelUsuario usuario = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			try {
+				conexao = ConexaoBanco.getInstance().abrirConexao();
+				ps = conexao.prepareStatement("SELECT ID_CARTAO FROM CARTAO WHERE NR_CARTAO = ?");
+				ps.setString(1, nr_cartao);
+				rs = ps.executeQuery();
+
+				if (rs.next()){
+					id_cartao = rs.getInt("ID_CARTAO");
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					ps.close();
+					rs.close();
+					conexao.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return id_cartao;
+		}
+
 	
 }

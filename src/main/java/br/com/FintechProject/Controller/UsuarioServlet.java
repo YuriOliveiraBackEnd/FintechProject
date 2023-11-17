@@ -66,7 +66,7 @@ public class UsuarioServlet extends HttpServlet {
           
           dao.cadastrar(usuario);
           
-          response.sendRedirect("login.jsp");
+          response.sendRedirect("telaSucessoUsuario.jsp");
           
 		  }
 		  catch(DBException db){

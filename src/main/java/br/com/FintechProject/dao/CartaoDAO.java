@@ -12,5 +12,6 @@ public interface CartaoDAO {
 	void remover(int id) throws DBException;
 	ModelCartao buscar(int id);
 	List<ModelCartao> listarTodos();
+	Integer buscarId(String userEmail);
 
 }
