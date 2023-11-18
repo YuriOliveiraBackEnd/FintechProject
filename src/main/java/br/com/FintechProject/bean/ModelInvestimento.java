@@ -8,7 +8,15 @@ public class ModelInvestimento extends ModelMovimentacaoFinanceira {
 	private LocalDate dt_investimento;
 	private int id_usuario;
 	
-	
+	private String dataformatada;
+	public String getDataformatada() {
+		return dataformatada;
+	}
+
+
+	public void setDataformatada(String dataformatada) {
+		this.dataformatada = dataformatada;
+	}
 	
 	
 	public ModelInvestimento() {
@@ -28,6 +36,16 @@ public class ModelInvestimento extends ModelMovimentacaoFinanceira {
 		super();
 		
 		this.dt_investimento = dt_investimento;
+		this.id_usuario = id_usuario;
+		this.setValor(valor);
+		this.setDescricao(descricao);
+		this.setTx_titulo(tx_titulo);
+		this.setTipo(tipo);
+	}
+	public ModelInvestimento( int id_investimento,String dataformatada,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
+		super();
+		
+		this.dataformatada = dataformatada;
 		this.id_usuario = id_usuario;
 		this.setValor(valor);
 		this.setDescricao(descricao);

@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -89,7 +90,7 @@ private Connection conexao;
 	  
 	    //Percorre todos os registros encontrados
 	    while (rs.next()) {
-	    int id_gasto = rs.getInt("ID_GASTO");
+
 	    int nr_parcelas = rs.getInt("NR_PARCELAS");
 	    LocalDate dt_gasto = rs.getDate("DT_GASTO").toLocalDate();
 	    double valor = rs.getDouble("VALOR");
@@ -99,8 +100,11 @@ private Connection conexao;
 	    int id_cartao = rs.getInt("ID_CARTAO");
 	    int id_usuario = rs.getInt("ID_USUARIO");
 	  
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String dataformatada = dt_gasto.format(formatter);
 	        //Cria um objeto Colaborador com as informações encontradas
-	        ModelGasto gasto = new ModelGasto(id_gasto, nr_parcelas, dt_gasto,valor,descricao,tx_titulo,tipo,id_cartao,id_usuario);
+	        ModelGasto gasto = new ModelGasto(nr_parcelas, dataformatada,valor,descricao,tx_titulo,tipo,id_cartao,id_usuario);
 	        //Adiciona o colaborador na lista
 	        lista.add(gasto);
 	      }

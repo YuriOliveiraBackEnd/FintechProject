@@ -10,8 +10,10 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import br.com.FintechProject.bean.ModelCartao;
+import br.com.FintechProject.bean.ModelGasto;
 import br.com.FintechProject.bean.ModelUsuario;
 import br.com.FintechProject.dao.CartaoDAO;
 import br.com.FintechProject.dao.GastoDAO;
@@ -21,7 +23,7 @@ import br.com.FintechProject.factory.DAOFactory;
 /**
  * Servlet implementation class CartaoServlet
  */
-@WebServlet("/cadastrocartao")
+@WebServlet("/cartaoservlet")
 public class CartaoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	   private CartaoDAO dao;
@@ -39,13 +41,7 @@ public class CartaoServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -85,5 +81,10 @@ public class CartaoServlet extends HttpServlet {
 			
 		doGet(request, response);
 	}
-
+	  @Override
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    		List<ModelCartao> lista = dao.listarTodos();
+	    		request.setAttribute("cartoes", lista);
+	    		request.getRequestDispatcher("telaListaCartao.jsp").forward(request, response);	
+	    }
 }

@@ -9,7 +9,6 @@ public class ConexaoBanco {
 	private static final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL";
 	private static final String USUARIO = "RM552512";
 	private static final String SENHA = "190804";
-	
 	private static ConexaoBanco instance;
 	
 	private ConexaoBanco() {}

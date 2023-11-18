@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Login Page</title>
    <link rel="stylesheet" href="resources/css/login3.css">
     <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
@@ -12,8 +12,8 @@
   <%@ include file="header.jsp" %>
    <div class="main-login" id="main-login">
         <div class="left-login">
-            <h1>Faça login </br>  E libere todas as funcionalidades </h1>
-            <img src="resources/img/Business Plan-pana.svg" class="left-login-img" alt="animação">
+            <h1>FaÃ§a login </br>  E libere todas as funcionalidades </h1>
+            <img src="resources/img/Business Plan-pana.svg" class="left-login-img" alt="animaÃ§Ã£o">
         </div>
                 <form action="login" method = "post" >
         <div class="right-login">

@@ -4,7 +4,7 @@
   
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Header Page</title>
 
   <link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
@@ -26,10 +26,10 @@
 
                 <ul id="menu">
                     <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="cadastroGasto.jsp" class="nav-link">Gastos e Rendimentos</a></li>
-                    <li class="nav-item"><a href="cadastroCartao.jsp" class="nav-link">Cartões</a></li>
-                     <li class="nav-item"><a href="cadastroRendimento.jsp" class="nav-link">Rendimentos</a></li>
-                    <li class="nav-item"><a href="cadastroInvestimento.jsp" class="nav-link">Investimentos</a></li>
+                    <li class="nav-item"><a href="gastoservlet" class="nav-link">Gastos </a></li>
+                    <li class="nav-item"><a href="cartaoservlet" class="nav-link">Cartões</a></li>
+                     <li class="nav-item"><a href="rendimentoservlet" class="nav-link">Rendimentos</a></li>
+                    <li class="nav-item"><a href="investimentoservlet" class="nav-link">Investimentos</a></li>
 
 
                      <c:if test= "${empty user }">

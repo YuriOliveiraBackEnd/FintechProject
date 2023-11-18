@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Cadasto Page</title>
  <link rel="stylesheet" href="resources/css/cadastroGasto.css">
 </head>
@@ -12,14 +12,14 @@
   <body>
   <div>
 
-  <form action="cadastrogasto" method = "post">
+  <form action="gastoservlet" method = "post">
    
     <h2 class="Title">Cadastro de gasto</h2>
 
-    <label for="titulo">Título:</label>
+    <label for="titulo">TÃ­tulo:</label>
     <input type="text" id="titulo" name="titulo" required>
 
-    <label for="descricao">Descrição:</label>
+    <label for="descricao">DescriÃ§Ã£o:</label>
     <input type="text" id="descricao" name="descricao">
 
     
@@ -37,12 +37,12 @@
     <label for="data">Data:</label>
     <input type="date" id="data" name="data" required>
     
-    <label for="metodoPagamento">Método de Pagamento:</label>
+    <label for="metodoPagamento">MÃ©todo de Pagamento:</label>
     <select id="metodoPagamento" name="metodoPagamento" required>
-      <option value="cartao">Cartão</option>
+      <option value="cartao">CartÃ£o</option>
     </select>
 
-    <label for="nr_cartao">Número do cartão:</label>
+    <label for="nr_cartao">NÃºmero do cartÃ£o:</label>
     <input type="text" id="nr_cartao" name="nr_cartao">
     <button type="submit">Cadastrar</button>
   </form>

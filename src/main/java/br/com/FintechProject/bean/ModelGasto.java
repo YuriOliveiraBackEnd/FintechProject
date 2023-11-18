@@ -9,7 +9,20 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 	private LocalDate dt_gasto;
 	private int id_usuario;
 	private int id_cartao;
+	private String dataformatada;
 	
+	
+	
+	
+	
+	public String getDataformatada() {
+		return dataformatada;
+	}
+
+
+	public void setDataformatada(String dataformatada) {
+		this.dataformatada = dataformatada;
+	}
 	
 
 	public ModelGasto() {
@@ -22,6 +35,18 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 
 		this.nr_parcelas = nr_parcelas;
 		this.dt_gasto = dt_gasto;
+		this.setValor(valor);
+		this.setDescricao(descricao);
+		this.setTx_titulo(tx_titulo);
+		this.setTipo(tipo);
+		this.id_usuario = id_usuario;
+		this.id_cartao = id_cartao;
+	}
+	public ModelGasto( int nr_parcelas, String dataformada,double valor,String descricao,String tx_titulo,String tipo, int id_usuario,int id_cartao) {
+		super();
+
+		this.nr_parcelas = nr_parcelas;
+		this.dataformatada = dataformada;
 		this.setValor(valor);
 		this.setDescricao(descricao);
 		this.setTx_titulo(tx_titulo);

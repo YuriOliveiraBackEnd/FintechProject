@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Home Page</title>
  <link rel="stylesheet" href="resources/css/index.css">
     <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
@@ -12,7 +12,7 @@
 <%@ include file="header.jsp" %>
  <br>
     <!-- titulo-->
-   <H4 class="name">Olá,<%= request.getAttribute("nomeUsuario") %></H4>
+   <H4 class="name">OlÃ¡,<%= request.getAttribute("nomeUsuario") %></H4>
 
 
     <!-- buttons radios -->
@@ -53,7 +53,7 @@
     </div>
     <!-- fim -->
   </div>
-  <!-- botão de passar slide -->
+  <!-- botÃ£o de passar slide -->
   <div class="nav-manual" >
     <label for="radio1" class="btn-manual"></label>
     <label for="radio2" class="btn-manual"></label>

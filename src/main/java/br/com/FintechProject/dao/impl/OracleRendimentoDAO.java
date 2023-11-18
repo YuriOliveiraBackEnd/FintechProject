@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +61,7 @@ public class OracleRendimentoDAO implements RendimentoDAO {
 		}
 	}
 	
+	
 	public List<ModelRendimento> listarTodos(){
 		//cria uma lista de investimentos
 	    List<ModelRendimento> lista = new ArrayList<ModelRendimento>();
@@ -81,8 +83,13 @@ public class OracleRendimentoDAO implements RendimentoDAO {
 	    String tipo = rs.getString("TIPO");
 	    int id_usuario = rs.getInt("ID_USUARIO");
 	  
+	    
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String dataformatada = dt_rendimento.format(formatter);
+
 	        //Cria um objeto Colaborador com as informações encontradas
-	        ModelRendimento rendimento = new ModelRendimento(id_rendimento,dt_rendimento,rendimento_anual,valor,descricao,tx_titulo,tipo,id_usuario);
+	        ModelRendimento rendimento = new ModelRendimento(dataformatada,rendimento_anual,valor,descricao,tx_titulo,tipo,id_usuario);
 	        //Adiciona o colaborador na lista
 	        lista.add(rendimento);
 	    }

@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import br.com.FintechProject.bean.ModelCartao;
 import br.com.FintechProject.bean.ModelGasto;
@@ -20,7 +21,7 @@ import br.com.FintechProject.factory.DAOFactory;
 /**
  * Servlet implementation class GastoServlet
  */
-@WebServlet("/cadastrogasto")
+@WebServlet("/gastoservlet")
 public class GastoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,13 +37,6 @@ public class GastoServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -86,5 +80,11 @@ public class GastoServlet extends HttpServlet {
 		  
 		doGet(request, response);
 	}
+	  @Override
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    		List<ModelGasto> lista = dao.listarTodos();
+	    		request.setAttribute("gastos", lista);
+	    		request.getRequestDispatcher("telaListaGasto.jsp").forward(request, response);	
+	    }
 
 }

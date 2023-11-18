@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Cadasto Page</title>
 <link rel="stylesheet" href="resources/css/cadastroGasto.css">
 </head>
@@ -14,7 +14,7 @@
 
   <form action="cadastrousuario" method = "post">
    
-    <h2 class="Title">Cadastro de usuário</h2>
+    <h2 class="Title">Cadastro de usuÃ¡rio</h2>
 
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome" required>

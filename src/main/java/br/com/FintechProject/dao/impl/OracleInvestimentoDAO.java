@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,8 +79,12 @@ public class OracleInvestimentoDAO implements InvestimentoDAO {
 	    String tipo = rs.getString("TIPO");
 	    int id_usuario = rs.getInt("ID_USUARIO");
 	  
+	    
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String dataformatada = dt_investimento.format(formatter);
 	        //Cria um objeto Colaborador com as informações encontradas
-	        ModelInvestimento investimento = new ModelInvestimento(id_investimento,dt_investimento,valor,descricao,tx_titulo,tipo,id_usuario);
+	        ModelInvestimento investimento = new ModelInvestimento(id_investimento,dataformatada,valor,descricao,tx_titulo,tipo,id_usuario);
 	        //Adiciona o colaborador na lista
 	        lista.add(investimento);
 	    }

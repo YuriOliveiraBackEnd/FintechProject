@@ -10,7 +10,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
+import br.com.FintechProject.bean.ModelGasto;
 import br.com.FintechProject.bean.ModelInvestimento;
 import br.com.FintechProject.bean.ModelRendimento;
 import br.com.FintechProject.dao.InvestimentoDAO;
@@ -21,7 +23,7 @@ import br.com.FintechProject.factory.DAOFactory;
 /**
  * Servlet implementation class InvestimentoServlet
  */
-@WebServlet("/cadastroinvestimento")
+@WebServlet("/investimentoservlet")
 public class InvestimentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,13 +42,6 @@ public class InvestimentoServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -86,7 +81,12 @@ public class InvestimentoServlet extends HttpServlet {
 			  
 		  }
 		  
-		doGet(request, response);
+	
 	}
-
+	  @Override
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    		List<ModelInvestimento> lista = dao.listarTodos();
+	    		request.setAttribute("investimentos", lista);
+	    		request.getRequestDispatcher("telaListaInvestimento.jsp").forward(request, response);	
+	    }
 }

@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Cadastro Page</title>
  <link rel="stylesheet" href="resources/css/cadastroGasto.css">
 </head>
@@ -12,14 +12,14 @@
   <body>
   <div>
 	
-  <form action="cadastroinvestimento" method = "post">
+  <form action="investimentoservlet" method = "post">
    
     <h2 class="Title">Cadastro de investimento</h2>
 
-    <label for="titulo">Título:</label>
+    <label for="titulo">TÃ­tulo:</label>
     <input type="text" id="titulo" name="titulo" required>
 
-    <label for="descricao">Descrição:</label>
+    <label for="descricao">DescriÃ§Ã£o:</label>
     <input type="text" id="descricao" name="descricao">
 
     

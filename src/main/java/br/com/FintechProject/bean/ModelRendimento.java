@@ -9,6 +9,17 @@ public class ModelRendimento extends ModelMovimentacaoFinanceira{
 	private LocalDate dt_rendimento;
 	private int id_usuario;
 	
+	private String dataformatada;
+	public String getDataformatada() {
+		return dataformatada;
+	}
+
+
+	public void setDataformatada(String dataformatada) {
+		this.dataformatada = dataformatada;
+	}
+
+
 	public ModelRendimento() {
 		
 	}
@@ -35,6 +46,17 @@ public class ModelRendimento extends ModelMovimentacaoFinanceira{
 		this.setTipo(tipo);
 		this.id_usuario = id_usuario;
 		this.dt_rendimento = dt_rendimento;
+	}
+	public ModelRendimento(String dataformatada,  double rendimento_anual,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
+		super();
+
+		this.rendimento_anual = rendimento_anual;
+		this.setValor(valor);
+		this.setDescricao(descricao);
+		this.setTx_titulo(tx_titulo);
+		this.setTipo(tipo);
+		this.id_usuario = id_usuario;
+		this.dataformatada = dataformatada;
 	}
 
 	public int getId_rendimento() {

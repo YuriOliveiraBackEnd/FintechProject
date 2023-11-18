@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
 <title>Footer Page</title>
   <link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
- <link rel="stylesheet" href="resources/css/header1.css">
+ <link rel="stylesheet" href="resources/css/header2.css">
  <script src="https://kit.fontawesome.com/78e3b8eb13.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
             <div class="colfooter">
                 <h3 class="titleFooter"> Menu</h3>
                 <ul>
-                    <li><a href="#" title="Página Inícial">Página Inícial</a></li>
+                    <li><a href="#" title="PÃ¡gina InÃ­cial">PÃ¡gina InÃ­cial</a></li>
                     <li><a href="#" title="Sobre a Empresa">Sobre a Empresa</a></li>
                     <li><a href="#" title="Galeria de Fotos">Galeria de Fotos</a></li>
                     <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
