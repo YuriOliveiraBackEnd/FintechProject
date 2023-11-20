@@ -60,9 +60,9 @@ public class RendimentoServlet extends HttpServlet {
 		 }
 	}
 	private void excluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	int id_investimento = Integer.parseInt(request.getParameter("id_investimento"));
+	int id_rendimento = Integer.parseInt(request.getParameter("id_rendimento"));
 	try {
-		dao.remover(id_investimento);
+		dao.remover(id_rendimento);
 		request.setAttribute("msg", "Produto removido");
 	}catch(DBException e) {
 		e.printStackTrace();

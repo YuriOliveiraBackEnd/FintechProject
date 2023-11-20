@@ -55,7 +55,7 @@ public class InvestimentoServlet extends HttpServlet {
 		 else if("editar".equals(acao)) {
 			 editar(request,response);
 		 }
-			 else if("excluir".equals(acao)) {
+		 else if("excluir".equals(acao)) {
 				 excluir(request,response); 
 			 }
 		}
