@@ -43,7 +43,7 @@ public class Loginfilter extends HttpFilter implements Filter {
 		HttpSession session = req.getSession();
 		String url = req.getRequestURI();
 		
-		if(session.getAttribute("user")==null && !url.endsWith("login") && !url.contains("resources") && !url.contains("telaErro")){
+		if(session.getAttribute("user")==null && !url.endsWith("login") && !url.contains("resources") && !url.contains("telaErro") && !url.contains("404") && !url.contains("cadastrousuario") && !url.contains("cadastroUsuario")   && !url.contains("telaSucessoUsuario")){
 			request.setAttribute("errofilter", "Faça login!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}else {

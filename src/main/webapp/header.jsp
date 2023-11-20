@@ -48,9 +48,7 @@
                 </ul>
             </div>
             <div class="btns">
-                <div>
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
+              
                 <div class="mood-dark">
                     <input type="checkbox" class="checkbox" id="chk" />
                     <label class="label-mood-dark" for="chk">

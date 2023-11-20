@@ -12,19 +12,23 @@
     <servlet-name>GastoServlet</servlet-name>
     <servlet-class>br.com.FintechProject.Controller</servlet-class>
   </servlet>
+  <error-page>
+	<error-code>404</error-code>
+	<location>/404.jsp</location>
+</error-page>
   <servlet-mapping>
     <servlet-name>GastoServlet</servlet-name>
     <url-pattern>/GastoServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>CadastroUsuario</display-name>
-    <servlet-name>CadastroUsuario</servlet-name>
-    <servlet-class>br.com.FintechProject.Controller.CadastroUsuario</servlet-class>
+    <display-name>UsuarioServlet</display-name>
+    <servlet-name>UsuarioServlet</servlet-name>
+    <servlet-class>br.com.FintechProject.Controller.UsuarioServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CadastroUsuario</servlet-name>
-    <url-pattern>/CadastroUsuario</url-pattern>
+    <servlet-name>UsuarioServlet</servlet-name>
+    <url-pattern>/UsuarioServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

@@ -39,19 +39,24 @@ public class UsuarioServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
+
+	
 
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  try {
+		 String acao = request.getParameter("acao");
+		if("cadastrar".equals(acao))
+		 {
+			 cadastrar(request,response); 
+		 }
+		     
+	}
+
+	private void cadastrar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		try {
 	      String  nome = request.getParameter("nome") ;    
           String  nr_cpf = request.getParameter("cpf") ;
           String  tel_usuario = request.getParameter("telefone");
@@ -75,9 +80,6 @@ public class UsuarioServlet extends HttpServlet {
 			  response.sendRedirect("telaErroCadastro.jsp");
 			  
 		  }
-		  
-		
-          
 	}
 
 }

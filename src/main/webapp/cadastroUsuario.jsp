@@ -5,7 +5,7 @@
 <head>
  <meta charset="UTF-8">
 <title>Cadasto Page</title>
-<link rel="stylesheet" href="resources/css/cadastroGasto1.css">
+<link rel="stylesheet" href="resources/css/cadastroGasto2.css">
 </head>
 <body>
 <%@ include file="header.jsp" %>
