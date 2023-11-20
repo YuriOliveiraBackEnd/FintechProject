@@ -47,9 +47,9 @@ public class ModelRendimento extends ModelMovimentacaoFinanceira{
 		this.id_usuario = id_usuario;
 		this.dt_rendimento = dt_rendimento;
 	}
-	public ModelRendimento(String dataformatada,  double rendimento_anual,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
+	public ModelRendimento(int id_rendimento,String dataformatada,  double rendimento_anual,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
 		super();
-
+		this.id_rendimento = id_rendimento;
 		this.rendimento_anual = rendimento_anual;
 		this.setValor(valor);
 		this.setDescricao(descricao);

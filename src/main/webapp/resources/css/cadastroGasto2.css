@@ -24,7 +24,16 @@ body {
       padding: 20px;
       width: 500px;
     }
-    
+    .btns{
+    display:flex;
+    gap:30px;
+    }
+    #btn-excluir{
+ background-color: #ff5050;
+}
+    #btn-salvar{
+ background-color: #4caf50;
+}
     label {
       display: block;
       margin-top: 12px;
@@ -55,6 +64,16 @@ body {
       outline: none;
       border-radius: 10px;
     }
+  .btns-salvarCancelar{
+      color:black;
+      font-weight: 800;
+  }
+   .btns-salvarCancelar a{
+      text-decoration: none;
+  list-style: none;
+  color: black;
+  font-weight: 800;
+  }
 h2{
   display: flex;
   justify-content: center;

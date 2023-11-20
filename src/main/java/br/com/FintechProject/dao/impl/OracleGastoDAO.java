@@ -78,19 +78,20 @@ private Connection conexao;
 	
 	}
 	@Override
-	public List<ModelGasto> listarTodos(){
+	public List<ModelGasto> listarTodos(int id_usuariologado){
 		//cria uma lista de gastos
 	    List<ModelGasto> lista = new ArrayList<ModelGasto>();
 	    PreparedStatement stmt = null;
 	    ResultSet rs = null;
 	    try {
 	    	conexao = ConexaoBanco.getInstance().abrirConexao();
-	    stmt = conexao.prepareStatement("SELECT * FROM GASTO Order BY ID_GASTO");
+	    stmt = conexao.prepareStatement("SELECT * FROM GASTO WHERE id_usuario = ? ORDER BY ID_GASTO");
+	    stmt.setInt(1, id_usuariologado);
 	    rs = stmt.executeQuery();
 	  
 	    //Percorre todos os registros encontrados
 	    while (rs.next()) {
-
+        int id_gasto = rs.getInt("ID_GASTO");
 	    int nr_parcelas = rs.getInt("NR_PARCELAS");
 	    LocalDate dt_gasto = rs.getDate("DT_GASTO").toLocalDate();
 	    double valor = rs.getDouble("VALOR");
@@ -104,7 +105,7 @@ private Connection conexao;
 
         String dataformatada = dt_gasto.format(formatter);
 	        //Cria um objeto Colaborador com as informações encontradas
-	        ModelGasto gasto = new ModelGasto(nr_parcelas, dataformatada,valor,descricao,tx_titulo,tipo,id_cartao,id_usuario);
+	        ModelGasto gasto = new ModelGasto(id_gasto,nr_parcelas, dataformatada,valor,descricao,tx_titulo,tipo,id_cartao,id_usuario);
 	        //Adiciona o colaborador na lista
 	        lista.add(gasto);
 	      }
@@ -195,8 +196,45 @@ private Connection conexao;
 	
 	@Override
 	public ModelGasto buscar(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		ModelGasto gasto = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conexao = ConexaoBanco.getInstance().abrirConexao();
+			stmt = conexao.prepareStatement("SELECT * FROM GASTO WHERE ID_GASTO = ?");
+			stmt.setInt(1, id);
+			rs = stmt.executeQuery();
+
+			if (rs.next()){
+				    int id_gasto = rs.getInt("id_gasto");
+				    int nr_parcelas = rs.getInt("NR_PARCELAS");
+				    LocalDate dt_gasto = rs.getDate("DT_GASTO").toLocalDate();
+				    double valor = rs.getDouble("VALOR");
+				    String descricao = rs.getString("DESCRICAO");
+				    String tx_titulo = rs.getString("TX_TITULO");
+				    String tipo = rs.getString("TIPO");
+				    int id_cartao = rs.getInt("ID_CARTAO");
+				    int id_usuario = rs.getInt("ID_USUARIO");
+				  
+//				    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//
+//			        String dataformatada = dt_gasto.format(formatter);
+				
+				gasto = new ModelGasto(id_gasto,nr_parcelas, dt_gasto,valor,descricao,tx_titulo,tipo,id_usuario,id_cartao);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return gasto;
 	}
 	@Override
 	public Integer buscarId(String userEmail) {

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
+  <welcome-file-list>
+  <welcome-file>login.jsp</welcome-file>
+ </welcome-file-list>
+ <session-config>
+ <session-timeout>5</session-timeout>
+ </session-config>
   <servlet>
     <servlet-name>GastoServlet</servlet-name>
     <servlet-class>br.com.FintechProject.Controller</servlet-class>
@@ -58,4 +66,13 @@
     <servlet-name>InvestimentoServlet</servlet-name>
     <url-pattern>/InvestimentoServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>Loginfilter</display-name>
+    <filter-name>Loginfilter</filter-name>
+    <filter-class>br.com.FintechProject.filter.Loginfilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Loginfilter</filter-name>
+    <url-pattern>/Loginfilter</url-pattern>
+  </filter-mapping>
 </web-app>

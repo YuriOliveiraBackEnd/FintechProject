@@ -11,6 +11,6 @@ public interface RendimentoDAO {
 	void atualizar(ModelRendimento rendimento) throws DBException;
 	void remover(int id) throws DBException;
 	ModelRendimento buscar(int id);
-	List<ModelRendimento> listarTodos();
+	List<ModelRendimento> listarTodos(int id_usuariologado);
 	Integer buscarId(String userEmail);
 }

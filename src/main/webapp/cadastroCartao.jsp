@@ -5,7 +5,7 @@
 <head>
  <meta charset="UTF-8">
 <title>Cadasto Page</title>
-<link rel="stylesheet" href="resources/css/cadastroGasto.css">
+<link rel="stylesheet" href="resources/css/cadastroGasto2.css">
 </head>
 <body>
   <%@ include file="header.jsp" %>
@@ -13,7 +13,7 @@
   <div>
 
   <form action="cartaoservlet" method = "post">
-
+  <input type="hidden" value ="cadastrar" id="titulo" name="acao">
     <h2 class="Title">Cadastro de Cartão</h2>
 
     <label for="nm_pessoa">Nome:</label>
@@ -31,12 +31,12 @@
 
        <label for="nm_banco">Nome Banco:</label>
     <select id="nm_banco" name="nm_banco" required>
-      <option value="Banco_do_Brasil">Banco do Brasil</option>
-      <option value="Banco_Bradesco">Banco Bradesco</option>
-      <option value="Itau_Unibanco">Itaú Unibanco </option>
-      <option value="Banco_Santander">Banco Santander </option>
-      <option value="Banco_Safra">Banco Safra </option>
-      <option value="Banco_Inter">Banco Inter </option>
+      <option value="Banco do Brasil">Banco do Brasil</option>
+      <option value="Banco Bradesco">Banco Bradesco</option>
+      <option value="Itau Unibanco">Itaú Unibanco </option>
+      <option value="Banco Santander">Banco Santander </option>
+      <option value="Banco Safra">Banco Safra </option>
+      <option value="Banco Inter">Banco Inter </option>
     </select>
 
     

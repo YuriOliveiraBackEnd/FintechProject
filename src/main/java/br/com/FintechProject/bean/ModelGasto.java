@@ -42,9 +42,9 @@ public class ModelGasto extends ModelMovimentacaoFinanceira {
 		this.id_usuario = id_usuario;
 		this.id_cartao = id_cartao;
 	}
-	public ModelGasto( int nr_parcelas, String dataformada,double valor,String descricao,String tx_titulo,String tipo, int id_usuario,int id_cartao) {
+	public ModelGasto(int id_gasto, int nr_parcelas, String dataformada,double valor,String descricao,String tx_titulo,String tipo, int id_usuario,int id_cartao) {
 		super();
-
+        this.id_gasto = id_gasto;
 		this.nr_parcelas = nr_parcelas;
 		this.dataformatada = dataformada;
 		this.setValor(valor);

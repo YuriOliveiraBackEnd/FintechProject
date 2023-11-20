@@ -11,7 +11,7 @@ public interface GastoDAO {
 	void atualizar(ModelGasto gasto) throws DBException;
 	void remover(int id) throws DBException;
 	ModelGasto buscar(int id);
-	List<ModelGasto> listarTodos();
+	List<ModelGasto> listarTodos(int id_usuariologado);
 	Integer buscarId(String userEmail);
 	Integer buscarCartao(String nr_cartao);
 }

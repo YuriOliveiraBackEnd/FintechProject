@@ -6,9 +6,12 @@ import java.sql.SQLException;
 
 public class ConexaoBanco {
 	
-	private static final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL";
-	private static final String USUARIO = "RM552512";
-	private static final String SENHA = "190804";
+//	private static final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL";
+//	private static final String USUARIO = "RM552512";
+//	private static final String SENHA = "190804";
+	private static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+	private static final String USUARIO = "System";
+	private static final String SENHA = "123456789";
 	private static ConexaoBanco instance;
 	
 	private ConexaoBanco() {}

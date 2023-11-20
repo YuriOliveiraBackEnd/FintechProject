@@ -5,7 +5,7 @@
 <head>
  <meta charset="UTF-8">
 <title>Cadastro Page</title>
- <link rel="stylesheet" href="resources/css/cadastroGasto.css">
+ <link rel="stylesheet" href="resources/css/cadastroGasto2.css">
 </head>
 <body>
   <%@ include file="header.jsp" %>
@@ -13,7 +13,7 @@
   <div>
 	
   <form action="rendimentoservlet" method = "post">
-   
+    <input type="hidden" value ="cadastrar" id="titulo" name="acao">
     <h2 class="Title">Cadastro de rendimento</h2>
 
     <label for="titulo">Título:</label>

@@ -26,6 +26,32 @@ h1{
     background-color: #FFD11D;;
     cursor: pointer;
 }
+.btn-editar{
+  width: 90%;
+  padding: 7px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: white;
+  background-color: #FFD11D;
+  cursor: pointer;
+  font-size: 15px;
+}
+.btn-editar a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+#btn-excluir{
+ background-color: #ff5050;
+}
+    .btns{
+    display:flex;
+    gap:30px;
+    }
 .btn-login:hover{
     background-color: #FFD11D;;
 }

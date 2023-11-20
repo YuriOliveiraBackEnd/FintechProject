@@ -44,7 +44,7 @@ public class ModelInvestimento extends ModelMovimentacaoFinanceira {
 	}
 	public ModelInvestimento( int id_investimento,String dataformatada,double valor,String descricao,String tx_titulo,String tipo, int id_usuario) {
 		super();
-		
+		this.id_investimento = id_investimento;
 		this.dataformatada = dataformatada;
 		this.id_usuario = id_usuario;
 		this.setValor(valor);

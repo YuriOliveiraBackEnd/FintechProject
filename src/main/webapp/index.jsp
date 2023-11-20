@@ -12,7 +12,7 @@
 <%@ include file="header.jsp" %>
  <br>
     <!-- titulo-->
-   <H4 class="name">Olá,<%= request.getAttribute("nomeUsuario") %></H4>
+   <H4 class="name">Olá,${nome}</H4>
 
 
     <!-- buttons radios -->

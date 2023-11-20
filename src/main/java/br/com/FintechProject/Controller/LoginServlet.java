@@ -53,7 +53,9 @@ public class LoginServlet extends HttpServlet {
 	        HttpSession session = request.getSession();
 	        session.setAttribute("user", email_usuario);
 	        String nome = dao.buscarnome(email_usuario);
-	        request.setAttribute("nomeUsuario", nome);
+	        session.setAttribute("nome", nome);
+	        
+	        request.getRequestDispatcher("index.jsp").forward(request, response);
 //	        String mensagem = "Um login foi realizado";
 //	        try {
 //            bo.enviarEmail(email_usuario, "Login Realizado", mensagem);
@@ -61,12 +63,11 @@ public class LoginServlet extends HttpServlet {
 //	            e.printStackTrace();
 //	        }
 	    } else {
-	        response.sendRedirect("telaErro.jsp");
-	        return; // Para evitar execução do código abaixo em caso de redirecionamento
+	    	    
+           response.sendRedirect("telaErro.jsp");
+	     
 	    }
-	    
-	    // A linha abaixo não será mais alcançada se o redirecionamento ocorrer no bloco "else"
-	    request.getRequestDispatcher("index.jsp").forward(request, response);
+	 
 	}
 	   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    	HttpSession session = request.getSession();
